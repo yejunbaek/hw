@@ -1,0 +1,942 @@
+#Joseph Baek
+#2022-05-17
+#ICS20
+#Candy Crush Programming Project
+
+
+import random
+import time
+points = 0
+trial = 5
+
+print("Welcome to the New Branded Candy Crush (NBCC)") #welcoming
+time.sleep(2)#wait 2 seconds
+#options
+print("<0> Leave")
+print("<1> How to play")
+print("<2> Play game")
+print("<3> Credits")
+controls = input("What would you like to do?: ") #ask what the user wants to do
+while controls != "0": #while loop to make the user control what they want to do
+    if controls == "1":
+        #show how to play the game
+        print("HOW TO PLAY NEW BRANDED CANDY CRUSH")
+        time.sleep(1)
+        print("1. You choose 2 numbers. They would be the boundaries of what numbers would be shown on the board. NOTE: They can only be inbetween 1 and 10 and the first one must be smaller than the second one.")
+        time.sleep(5)
+        print("2. A board would be shown and you must choose the row or column using the given following: A or a, B or b, C or c, D or d, E or e, 1, 2, 3, and 4!")
+        time.sleep(5)
+        print("3. Once you chose your row or column, if there are a 3 consecutive numbers, then they would be CRUSHED and replaced with new ones")
+        time.sleep(5)
+        print("4. There is a point system and ranking system at the end to see how good you really are.")
+        time.sleep(3)
+        print("5. There is a 'shuffle' or 'Shuffle' command that uses 10 points and shuffles the board")
+        time.sleep(3)
+        print("That is all for now! Thank you for playing and hope you have a great time!")
+        time.sleep(3)
+        print("Welcome to the New Branded Candy Crush (NBCC)")
+        print("<1> How to play")
+        print("<2> Play game")
+        print("<3> Credits")
+        controls = input("What would you like to do?: ") #returning to while loop
+    elif controls == "3": #if user inputs 3
+        #input credits and information
+        print("DATE: 05/17/22")
+        print("NAME: Joseph Baek")
+        print("COURSE: ICS20")
+        print("PROJECT: Candy Crush Programming Project")
+        print("<1> How to play")
+        print("<2> Play game")
+        print("<3> Credits")
+        controls = input("What would you like to do?: ") #returning to while loop
+    elif controls == "2": #play the game
+        print("Enter the numbers you would like to have on your board:")
+        #finding the numbers
+        number = int(input("Enter a number lower than 10 and bigger than 0: ")) 
+        number2 = int(input("Enter a second number lower than 10 and bigger than first number: "))
+        while not (0 < number < 10 and 0 < number2 < 10): #seeing if what they inputed is invalid
+            print("Invalid Input! Retry")
+            number = int(input("Enter a number lower than 10 and bigger than 0: "))
+            number2 = int(input("Enter a second number lower than 10 and bigger than your first number: "))
+        #if the 2 numbers are greater than 2 units apart then make sure if that's what they wanted
+        if number2 > 2:
+            question = input("Are you sure that you want to choose this number? It would be hard!: ")
+            if question == "yes" or question == "Yes" or question == "1":
+                print("Alright . . . . ") #continuing 
+                time.sleep(1)
+            elif question == "no" or question == "No" or question == "0": #returning to while loop
+                number = int(input("Enter a number lower than 10 and bigger than 0: "))
+                number2 = int(input("Enter a second number lower than 10 and bigger than your first number: "))
+        #making new variables
+        randomcombo1 = int(random.randint(number,number2))
+        randomcombo2 = int(random.randint(number,number2))
+        randomcombo3 = int(random.randint(number,number2))
+        randomcombo4 = int(random.randint(number,number2))
+        randomcombo5 = int(random.randint(number,number2))
+        randomcombo6 = int(random.randint(number,number2))
+        randomcombo7 = int(random.randint(number,number2))
+        randomcombo8 = int(random.randint(number,number2))
+        randomcombo9 = int(random.randint(number,number2))
+        randomcombo10 = int(random.randint(number,number2))
+        randomcombo11 = int(random.randint(number,number2))
+        randomcombo12 = int(random.randint(number,number2))
+        randomcombo13 = int(random.randint(number,number2))
+        randomcombo14 = int(random.randint(number,number2))
+        randomcombo15 = int(random.randint(number,number2))
+        randomcombo16 = int(random.randint(number,number2))
+        randomcombo17 = int(random.randint(number,number2))
+        randomcombo18 = int(random.randint(number,number2))
+        randomcombo19 = int(random.randint(number,number2))
+        randomcombo20 = int(random.randint(number,number2))
+        #print new board
+        print("Making Board . . . . . ")
+        time.sleep(3)
+        print("    A B C D E")
+        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+
+
+
+        userinput = input("Enter what you would like to break (0 to leave): ") #getting their input
+        if userinput == "0": #if it's zero then return to the main screen
+            print("<0> Leave")
+            print("<1> How to play")
+            print("<2> Play game")
+            print("<3> Credits")
+            controls = input("What would you like to do?: ") #return to while loop
+        while userinput != "0": #loop until userinput says 0
+            #new varialbes
+            column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+            row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20 #making a variable to hold the rows in order
+            if userinput == "1": #if they enter 1 then it calculates if there is anything to break
+                if row[0] == row[2] and row[1] == row[2]:#if the first number and the second number is correct then continue
+                    print("You got a combo! You get 3 points!") #print that they got a combo
+                    points += 3 #raising the points
+                    print("You have",points,"points") #printing how many points they have
+                    randomcombo1 = int(random.randint(number,number2)) #changing into new numbers
+                    randomcombo2 = int(random.randint(number,number2))
+                    randomcombo3 = int(random.randint(number,number2))
+                    #reseting 
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20
+
+                    print("    A B C D E") #printing new board
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ") #returning to while loop
+                #seeing other options
+                elif row[1] == row[3] and row[2] == row[3]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo3 = int(random.randint(number,number2))
+                    randomcombo2 = int(random.randint(number,number2))
+                    randomcombo4 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                #seeing other options
+                elif row[2] == row[4] and row[3] == row[4]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo5 = int(random.randint(number,number2))
+                    randomcombo3 = int(random.randint(number,number2))
+                    randomcombo4 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                elif row[0] != row[2] and row[1] != row[2] or row[1] != row[3] and row[2] != row[3] or row[2] != row[4] and row[3] != row[4]: #seeing if there are no combos
+                    trial -= 1 #remove a turn
+                    if trial > 0: #if its less greater than 1 then they can continue
+                        print("Move not possible! Try again") #inform them
+                        print("You have",trial,"tries left")#show how many more turns they have
+                        #printing board
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                        userinput = input("Enter what you would like to break (0 to leave): ") #return to while loop
+                        
+
+                    elif trial == 0: #if trial is 0
+                        trial -= 1
+                        
+                        print("This is your last turn") #inform that it is the last turn
+                        #printing board
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    elif trial < 0: #if trial is less than 0
+                        #end game credits
+                        print("CONGRATS!!!")
+                        time.sleep(2)
+                        print("You have ended with",points,"points!")
+                        time.sleep(2)
+                        if points <= 30:
+                            print("You are Iron")
+                        elif 30 < points <= 40:
+                            print("You are Silver")
+                        elif 40 < points <= 100:
+                            print("You are Gold")
+                        elif 100 < points:
+                            print("You are a Legend")
+                        print("Goodbye!")
+                        userinput = "0" #returning to if statement
+                        points = 0 #reseting points
+                        trial = 5 #reseting turns
+#the rest is the exact copy of this one but with some differences because of rows and columns
+            elif userinput == "2":
+                if row[5] == row[7] and row[6] == row[7]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo6 = int(random.randint(number,number2))
+                    randomcombo7 = int(random.randint(number,number2))
+                    randomcombo8 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20 
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                elif row[6] == row[8] and row[7] == row[8]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo8 = int(random.randint(number,number2))
+                    randomcombo7 = int(random.randint(number,number2))
+                    randomcombo9 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20 
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                elif row[7] == row[9] and row[8] == row[9]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo10 = int(random.randint(number,number2))
+                    randomcombo9 = int(random.randint(number,number2))
+                    randomcombo8 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20 
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+            
+                elif row[5] != row[7] and row[6] != row[7] or row[6] != row[8] and row[7] != row[8] or row[7] != row[9] and row[8] != row[9]:
+                    trial -= 1
+                    if trial > 0:
+                        print("Move not possible! Try again")
+                        print("You have",trial,"tries left")
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                        userinput = input("Enter what you would like to break (0 to leave): ")
+                        
+
+                    elif trial == 0:
+                        print("This is your last turn")
+                        
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    elif trial < 0: 
+                        print("CONGRATS!!!")
+                        time.sleep(2)
+                        print("You have ended with",points,"points!")
+                        time.sleep(2)
+                        if points <= 30:
+                            print("You are Iron")
+                        elif 30 < points <= 40:
+                            print("You are Silver")
+                        elif 40 < points <= 100:
+                            print("You are Gold")
+                        elif 100 < points:
+                            print("You are a Legend")
+                        print("Goodbye!")
+                        userinput = "0"
+                        points = 0
+                        trial = 5
+            elif userinput == "3":
+                if row[10] == row[12] and row[11] == row[12]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo11 = int(random.randint(number,number2))
+                    randomcombo12 = int(random.randint(number,number2))
+                    randomcombo13 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20 
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                elif row[11] == row[13] and row[12] != row[13]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo12 = int(random.randint(number,number2))
+                    randomcombo13 = int(random.randint(number,number2))
+                    randomcombo14 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                elif row[12] == row[14] and row[13] == row[14]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo13 = int(random.randint(number,number2))
+                    randomcombo14 = int(random.randint(number,number2))
+                    randomcombo15 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20 
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                elif row[10] != row[12] and row[11] != row[12] or row[11] != row[13] and row[12] != row[13] or row[12] != row[14] or row[13] != row[14]:
+                    trial -= 1
+                    if trial > 0:
+                        print("Move not possible! Try again")
+                        print("You have",trial,"tries left")
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                        userinput = input("Enter what you would like to break (0 to leave): ")
+                        
+
+                    elif trial == 0:
+                        print("This is your last turn")
+                        
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    elif trial < 0: 
+
+                        print("CONGRATS!!!")
+                        time.sleep(2)
+                        print("You have ended with",points,"points!")
+                        time.sleep(2)
+                        if points <= 30:
+                            print("You are Iron")
+                        elif 30 < points <= 40:
+                            print("You are Silver")
+                        elif 40 < points <= 100:
+                            print("You are Gold")
+                        elif 100 < points:
+                            print("You are a Legend")
+                        print("Goodbye!")
+                        userinput = "0"
+                        points = 0
+                        trial = 5
+            elif userinput == "4":
+                if row[15] == row[17] and row[16] == row[17]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo16 = int(random.randint(number,number2))
+                    randomcombo17 = int(random.randint(number,number2))
+                    randomcombo18 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20 
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                elif row[16] == row[18] and row[17] == row[18]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo17 = int(random.randint(number,number2))
+                    randomcombo18 = int(random.randint(number,number2))
+                    randomcombo19 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20 
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                elif row[17] == row[19] and row[18] == row[19]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo18 = int(random.randint(number,number2))
+                    randomcombo19
+                    randomcombo20 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20 
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                
+                elif row[15] != row[17] and row[16] != row[17] or row[16] != row[18] and row[17] != row[18] or row[17] != row[19] and row[18] != row[19]:
+                    trial -= 1
+                    if trial > 0:
+                        print("Move not possible! Try again")
+                        print("You have",trial,"tries left")
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                        userinput = input("Enter what you would like to break (0 to leave): ")
+                        
+
+                    elif trial == 0:
+                        print("This is your last turn")
+                        
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    elif trial < 0: 
+
+                        print("CONGRATS!!!")
+                        time.sleep(2)
+                        print("You have ended with",points,"points!")
+                        time.sleep(2)
+                        if points <= 30:
+                            print("You are Iron")
+                        elif 30 < points <= 40:
+                            print("You are Silver")
+                        elif 40 < points <= 100:
+                            print("You are Gold")
+                        elif 100 < points:
+                            print("You are a Legend")
+                        print("Goodbye!")
+                        userinput = "0"
+                        points = 0
+                        trial = 5
+            elif userinput == "A" or userinput == "a": 
+                if column[0] == column[2] and column[1] == column[2]:
+                    print("You got a combo! You get 3 points!") 
+                    points += 3 
+                    print("You have",points,"points")
+                    randomcombo1 = int(random.randint(number,number2))
+                    randomcombo6 = int(random.randint(number,number2))
+                    randomcombo11 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20 
+
+                    print("    A B C D E") 
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                elif column[1] == column[3] and column[2] == column[3]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo6 = int(random.randint(number,number2))
+                    randomcombo11 = int(random.randint(number,number2))
+                    randomcombo16 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+
+
+                elif column[0] != column[3] and column[2] != column[3] or column[1] != column[3] and column[2] == column[3]:
+                    trial -= 1
+                    if trial > 0:
+                        print("Move not possible! Try again")
+                        print("You have",trial,"tries left")
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                        userinput = input("Enter what you would like to break (0 to leave): ")
+                        
+
+                    elif trial == 0:
+                        print("This is your last turn")
+                        
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    elif trial < 0: 
+ 
+                        print("CONGRATS!!!")
+                        time.sleep(2)
+                        print("You have ended with",points,"points!")
+                        time.sleep(2)
+                        if points <= 30:
+                            print("You are Iron")
+                        elif 30 < points <= 40:
+                            print("You are Silver")
+                        elif 40 < points <= 100:
+                            print("You are Gold")
+                        elif 100 < points:
+                            print("You are a Legend")
+                        print("Goodbye!")
+                        userinput = "0"
+                        points = 0
+                        trial = 5
+            elif userinput == "B" or userinput == "b":
+                if column[4] == column[6] and column[5] == column[6]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo2 = int(random.randint(number,number2))
+                    randomcombo7 = int(random.randint(number,number2))
+                    randomcombo12 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                elif column[5] == column[7] and column[6] == column[7]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo7 = int(random.randint(number,number2))
+                    randomcombo12 = int(random.randint(number,number2))
+                    randomcombo17 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+
+
+                elif column[4] != column[6] and column[5] != column[6] or column[5] != column[7] and column[6] != column[7]: 
+                    trial -= 1
+                    if trial > 0:
+                        print("Move not possible! Try again")
+                        print("You have",trial,"tries left")
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                        userinput = input("Enter what you would like to break (0 to leave): ")
+                        
+
+                    elif trial == 0:
+                        print("This is your last turn")
+                        
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    elif trial < 0: 
+                        print("CONGRATS!!!")
+                        time.sleep(2)
+                        print("You have ended with",points,"points!")
+                        time.sleep(2)
+                        if points <= 30:
+                            print("You are Iron")
+                        elif 30 < points <= 40:
+                            print("You are Silver")
+                        elif 40 < points <= 100:
+                            print("You are Gold")
+                        elif 100 < points:
+                            print("You are a Legend")
+                        print("Goodbye!")
+                        userinput = "0"
+                        points = 0
+                        trial = 5
+            elif userinput == "C" or userinput == "c":
+            
+                if column[8] == column[10] and column[9] == column[10]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo3 = int(random.randint(number,number2))
+                    randomcombo13 = int(random.randint(number,number2))
+                    randomcombo8 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                elif column[9] == column[11] and column[10] == column[11]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo8 = int(random.randint(number,number2))
+                    randomcombo13 = int(random.randint(number,number2))
+                    randomcombo18 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                elif column[8] != column[10] and column[9] != column[10] or column[9] != column[11] and column[10] != column[11]: 
+                    trial -= 1
+                    if trial > 0:
+                        print("Move not possible! Try again")
+                        print("You have",trial,"tries left")
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                        userinput = input("Enter what you would like to break (0 to leave): ")
+                        
+
+                    elif trial == 0:
+                        print("This is your last turn")
+                        
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    elif trial < 0: 
+
+                        print("CONGRATS!!!")
+                        time.sleep(2)
+                        print("You have ended with",points,"points!")
+                        time.sleep(2)
+                        if points <= 30:
+                            print("You are Iron")
+                        elif 30 < points <= 40:
+                            print("You are Silver")
+                        elif 40 < points <= 100:
+                            print("You are Gold")
+                        elif 100 < points:
+                            print("You are a Legend")
+                        print("Goodbye!")
+                        userinput = "0"
+                        points = 0
+                        trial = 5
+            elif userinput == "D" or userinput == "d":
+                if column[12] == column[14] and column[13] == column[14]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo4 = int(random.randint(number,number2))
+                    randomcombo9 = int(random.randint(number,number2))
+                    randomcombo14 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                elif column[13] == column[15] and column[14] == column[15]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo9 = int(random.randint(number,number2))
+                    randomcombo14 = int(random.randint(number,number2))
+                    randomcombo19 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+
+
+                elif column[12] != column[14] and column[13] != column[14] or column[13] != column[15] and column[14] != column[15]: 
+                    trial -= 1
+                    if trial > 0:
+                        print("Move not possible! Try again")
+                        print("You have",trial,"tries left")
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                        userinput = input("Enter what you would like to break (0 to leave): ")
+                        
+
+                    elif trial == 0:
+                        print("This is your last turn")
+                        
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    elif trial < 0: 
+                        print("CONGRATS!!!")
+                        time.sleep(2)
+                        print("You have ended with",points,"points!")
+                        time.sleep(2)
+                        if points <= 30:
+                            print("You are Iron")
+                        elif 30 < points <= 40:
+                            print("You are Silver")
+                        elif 40 < points <= 100:
+                            print("You are Gold")
+                        elif 100 < points:
+                            print("You are a Legend")
+                        print("Goodbye!")
+                        userinput = "0"
+                        points = 0
+                        trial = 5
+            elif userinput == "E" or userinput == "e":
+                if column[16] == column[18] and column[17] == column[18]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo5 = int(random.randint(number,number2))
+                    randomcombo10 = int(random.randint(number,number2))
+                    randomcombo15 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+                elif column[17] == column[19] and column[18] == column[19]:
+                    print("You got a combo! You get 3 points!")
+                    points += 3
+                    print("You have",points,"points")
+                    randomcombo10 = int(random.randint(number,number2))
+                    randomcombo15 = int(random.randint(number,number2))
+                    randomcombo20 = int(random.randint(number,number2))
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20
+
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+
+                elif column[16] != column[18] and column[17] != column[18] or column[17] != column[19] and column[18] != column[19]: 
+                    trial -= 1
+                    if trial > 0:
+                        print("Move not possible! Try again")
+                        print("You have",trial,"tries left")
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                        userinput = input("Enter what you would like to break (0 to leave): ")
+                        
+
+                    elif trial == 0:
+                        print("This is your last turn")
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    elif trial < 0:
+
+                        print("CONGRATS!!!")
+                        time.sleep(2)
+                        print("You have ended with",points,"points!")
+                        time.sleep(2)
+                        if points <= 30:
+                            print("You are Iron")
+                        elif 30 < points <= 40:
+                            print("You are Silver")
+                        elif 40 < points <= 100:
+                            print("You are Gold")
+                        elif 100 < points:
+                            print("You are a Legend")
+                        print("Goodbye!")
+                        userinput = "0"
+                        points = 0
+                        trial = 5
+            elif userinput == "shuffle" or "Shuffle": #if user inputs shuffle
+                userinput2 = input("Do you want to spend 10 points to shuffle the board?: ") #asking if they want to use 10 points to shuffle
+                if userinput2 == "yes" or userinput2 == "Yes": #get user response
+                    if points < 10: #if less than 10 then continue
+                        print("You don't have enough points!") #inform the user that they don't have enough
+                        print("Returning back . . .")
+                        time.sleep(2)
+                        #print board
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                        userinput = input("Enter what you would like to break (0 to leave): ") #return to while loop
+                    elif points > 10: #if it's greater than 10
+                        print("You spent 10 points to shuffle the board . . . ") #inform that they can shuffle
+                        points -= 10 #remove 10 points
+                        print("You have",points,"points left!") #show how many points are left
+                        time.sleep(1)
+                        print("Shuffling table")
+                        #remaking all the variables
+                        randomcombo1 = int(random.randint(number,number2))
+                        randomcombo2 = int(random.randint(number,number2))
+                        randomcombo3 = int(random.randint(number,number2))
+                        randomcombo4 = int(random.randint(number,number2))
+                        randomcombo5 = int(random.randint(number,number2))
+                        randomcombo6 = int(random.randint(number,number2))
+                        randomcombo7 = int(random.randint(number,number2))
+                        randomcombo8 = int(random.randint(number,number2))
+                        randomcombo9 = int(random.randint(number,number2))
+                        randomcombo10 = int(random.randint(number,number2))
+                        randomcombo11 = int(random.randint(number,number2))
+                        randomcombo12 = int(random.randint(number,number2))
+                        randomcombo13 = int(random.randint(number,number2))
+                        randomcombo14 = int(random.randint(number,number2))
+                        randomcombo15 = int(random.randint(number,number2))
+                        randomcombo16 = int(random.randint(number,number2))
+                        randomcombo17 = int(random.randint(number,number2))
+                        randomcombo18 = int(random.randint(number,number2))
+                        randomcombo19 = int(random.randint(number,number2))
+                        randomcombo20 = int(random.randint(number,number2))
+                        column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                        row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20
+
+                        time.sleep(2)
+                        #printing board
+                        print("    A B C D E")
+                        print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                        print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                        print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                        print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                        userinput = input("Enter what you would like to break (0 to leave): ") #returning to while loop
+                    else: #if they put some weird output
+                        print("Invalid Input!") #inform that they put an invalid output
+                        userinput2 = input("Do you want to spend 10 points to shuffle the board?: ") #return to if statement
+                elif userinput2 == "no" or "No": # if they say no
+                    print("Returning back to original board . . . ") #return to original board
+                    time.sleep(2)
+                    column = randomcombo1,randomcombo6,randomcombo11,randomcombo16,randomcombo2,randomcombo7,randomcombo12,randomcombo17,randomcombo3,randomcombo8,randomcombo13,randomcombo18,randomcombo4,randomcombo9,randomcombo14,randomcombo19,randomcombo5,randomcombo10,randomcombo15,randomcombo20      
+
+                    row = randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5,randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10,randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15,randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20
+
+                    time.sleep(2)
+                    #printing board
+                    print("    A B C D E")
+                    print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                    print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                    print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                    print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                    userinput = input("Enter what you would like to break (0 to leave): ")
+
+            else: #if they put an invalid output
+                print("Invalid Answer") #inform them
+                time.sleep(1)
+                #printing board
+                print("    A B C D E")
+                print(1," ",randomcombo1,randomcombo2,randomcombo3,randomcombo4,randomcombo5)
+                print(2," ",randomcombo6,randomcombo7,randomcombo8,randomcombo9,randomcombo10)
+                print(3," ",randomcombo11,randomcombo12,randomcombo13,randomcombo14,randomcombo15)
+                print(4," ",randomcombo16,randomcombo17,randomcombo18,randomcombo19,randomcombo20)
+                userinput = input("Enter what you would like to break (0 to leave): ")
+print("Goodbye!") #sending a farewell message
